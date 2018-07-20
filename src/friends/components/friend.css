@@ -1,0 +1,28 @@
+.Friend {
+  color: white;
+  display: flex;
+  margin-bottom: 7px;
+  font-size: .8em;
+}
+
+.Friend a {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.Friend:hover a {
+  text-decoration: underline;
+}
+
+.Friend img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.Friend span {
+  display: inline-block;
+}

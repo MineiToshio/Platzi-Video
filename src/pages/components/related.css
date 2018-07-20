@@ -1,3 +1,18 @@
 .Related {
-  width: 300px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  background: #171929;
+  color: white;
+  padding: 1em;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: auto;
+}
+
+.Related .logo-image {
+  margin: 0;
+}
+.Related .logo-image img {
+  max-width: 100%;
 }
