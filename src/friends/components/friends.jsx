@@ -3,11 +3,11 @@ import SidebarPlaylist from "../../playlist/components/sidebar-playlist.jsx";
 import Friend from "../components/friend.jsx";
 
 const Friends = (props) => (
-  <SidebarPlaylist title="Playlist de amigos">
+  <SidebarPlaylist title={props.title}>
     {
-      props.friends.map((item) => {
-        return <Friend key={item.id} {...item} />
-      })
+      props.friends.map((item) => (
+        <Friend key={item.id} {...item} />
+      ))
     }
   </SidebarPlaylist>
 )

@@ -1,0 +1,15 @@
+.MyMedia a {
+  color: white;
+  text-decoration: none;
+  font-size: .8em;
+  display: block;
+  margin-bottom: 7px;
+}
+.MyMedia:last-child a {
+  margin-bottom: 0;
+}
+
+
+.MyMedia a:hover {
+  text-decoration: underline;
+}
