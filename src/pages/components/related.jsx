@@ -11,7 +11,7 @@ function Related(props) {
         <img src={logo} width={250} alt="Platzi Video - la Plataforma de videos cheveres"/>
       </figure>
       
-      <MyPlaylist medias={props.medias} title="My Playlist" />
+      <MyPlaylist medias={props.medias} title="My Playlist" handleOpenModal={props.handleOpenModal} />
       <Friends friends={props.friends} title="Friend's Playlist" />
     </div>
   )

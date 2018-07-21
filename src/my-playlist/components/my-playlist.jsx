@@ -8,7 +8,7 @@ const MyPlaylist = (props) => (
     <ol className="MyPlaylist">
       {
         props.medias.map((item) => (
-          <MyMedia key={item.id} {...item} />
+          <MyMedia key={item.id} {...item} handleOpenModal={props.handleOpenModal} />
         ))
       }
     </ol>
