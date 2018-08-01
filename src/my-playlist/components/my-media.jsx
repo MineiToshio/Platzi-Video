@@ -5,7 +5,7 @@ class MyMedia extends PureComponent {
 
   handleClick = (event) => {
     //console.log(this.props);
-    this.props.handleOpenModal(this.props);
+    this.props.handleOpenModal(this.props.id);
   }
 
   render () {

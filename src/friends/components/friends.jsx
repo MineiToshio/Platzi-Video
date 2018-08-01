@@ -6,7 +6,7 @@ const Friends = (props) => (
   <SidebarPlaylist title={props.title}>
     {
       props.friends.map((item) => (
-        <Friend key={item.id} {...item} />
+        <Friend key={item.get('id')} {...item.toJS()} />
       ))
     }
   </SidebarPlaylist>

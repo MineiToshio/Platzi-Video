@@ -1,9 +1,29 @@
 import React from "react";
 import { render } from "react-dom";
 import Home from "../pages/containers/home.jsx";
-import data from "../api.json";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import reducer from "../reducers/index";
+import { Map as map } from 'immutable'; 
+import logger from 'redux-logger'
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+
+const store = createStore(
+  reducer,
+  map(),
+  composeWithDevTools(
+    applyMiddleware(
+      logger,
+      thunk
+    )
+  )
+);
 
 const homeContainer = document.getElementById("home-container");
 
-//ReactDOM.render(que voy a renderizar, donde lo haré);
-render(<Home data={data} />, homeContainer);
+render(
+  <Provider store={store}>
+    <Home />
+  </Provider>
+, homeContainer);

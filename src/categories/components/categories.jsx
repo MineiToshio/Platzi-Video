@@ -2,6 +2,7 @@ import React from "react";
 import Category from "./category.jsx";
 import "./categories.css";
 import Search from "../../widgets/containers/search.jsx";
+import Media from "../../playlist/components/media.jsx";
 
 function Categories(props)
 {
@@ -9,9 +10,18 @@ function Categories(props)
     <div className="Categories">
       <Search/>
       {
+        props.isLoading &&
+        <p>Buscando tus videos favoritos...</p>
+      }
+      {
+        props.search.map((item) => {
+          return <Media openModal={props.handleOpenModal} {...item.toJS()} key={item.get('id')} />
+        })
+      }
+      {
         props.categories.map((item) => {
           return (
-            <Category key={item.id} {...item} handleOpenModal={props.handleOpenModal}/>
+            <Category key={item.get('id')} {...item.toJS()} handleOpenModal={props.handleOpenModal}/>
           )
         })
       }
